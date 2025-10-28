@@ -12,6 +12,11 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
         
         body {
             font-family: 'Crimson Text', serif;
@@ -257,11 +262,311 @@
             font-weight: bold;
             font-size: 0.95em;
         }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #555;
+            padding: 20px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            color: #d4d4d4;
+            text-decoration: none;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s, transform 0.3s;
+            padding: 10px 20px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            border-bottom-color: #777;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: #ffffff;
+            border-bottom-color: #555;
+        }
+
+        .install-box {
+            background-color: #252525;
+            border: 2px solid #555;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .install-step {
+            margin: 20px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .install-step::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #888;
+            font-size: 1.2em;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: #2a5a8a;
+            color: #ffffff;
+            padding: 15px 40px;
+            margin: 20px 0;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1.1em;
+        }
+
+        .download-button:hover {
+            background-color: #3a6a9a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .warning-box {
+            background-color: #3a2a1a;
+            border-left: 4px solid #d4a574;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .code-box {
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            color: #a8c0e0;
+            border-radius: 4px;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 40px auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            aspect-ratio: 16 / 9;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #ffffff;
+            font-size: 3em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .lightbox-close:hover {
+            color: #888;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: #ffffff;
+            padding: 20px;
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: #ffffff;
+            border: none;
+            font-size: 2em;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, opacity 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-indicator.active {
+            background-color: #ffffff;
+        }
+
+        .carousel-indicator:hover {
+            background-color: rgba(255,255,255,0.8);
+        }
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#installation" class="nav-link">Installation</a>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+        </div>
+    </nav>
+
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <div class="carousel-slide">
+                <img src="images/screenshot1.png" alt="Screenshot 1">
+                <div class="carousel-caption">Burn banners and get fined (Optional ENB included)</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="images/screenshot2.png" alt="Screenshot 2">
+                <div class="carousel-caption">Hunting overhaul inspired by RDR2 with immersive animations</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="images/screenshot5.png" alt="Screenshot 5">
+                <div class="carousel-caption">Immersive spelltome studies</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="images/screenshot6.png" alt="Screenshot 6">
+                <div class="carousel-caption">Atmospheric Morthal</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="images/screenshot7.png" alt="Screenshot 7">
+                <div class="carousel-caption">The Raven of Ravenrock</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="images/screenshot3.gif" alt="Gameplay GIF">
+                <div class="carousel-caption">Actually cook food</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="images/screenshot4.gif" alt="Screenshot 4">
+                <div class="carousel-caption">Destroy everything</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="images/screenshot8.gif" alt="Screenshot 8">
+                <div class="carousel-caption">Pottery included</div>
+            </div>
+        </div>
+
+        <button class="carousel-button prev" onclick="moveCarousel(-1)">‹</button>
+        <button class="carousel-button next" onclick="moveCarousel(1)">›</button>
+
+        <div class="carousel-indicators">
+            <button class="carousel-indicator active" onclick="goToSlide(0)"></button>
+            <button class="carousel-indicator" onclick="goToSlide(1)"></button>
+            <button class="carousel-indicator" onclick="goToSlide(2)"></button>
+            <button class="carousel-indicator" onclick="goToSlide(3)"></button>
+            <button class="carousel-indicator" onclick="goToSlide(4)"></button>
+            <button class="carousel-indicator" onclick="goToSlide(5)"></button>
+            <button class="carousel-indicator" onclick="goToSlide(6)"></button>
+            <button class="carousel-indicator" onclick="goToSlide(6)"></button>
+        </div>
+    </div>
+
     <div class="container">
-        <h1>Description</h1>
+        <h1 id="home">Description</h1>
         
         <div class="section">
             <p>The main focus of the collection is on <strong>small details</strong> and expanded <strong>roleplay options</strong>. It was made for <strong>performance</strong> in mind and stays <strong>vanilla-like</strong> while adding meaningful depth to almost every aspect of the game.</p>
@@ -280,10 +585,70 @@
             
             <p>The graphics settings can be configured via Skyrim Launcher (although, it is recommended to use <strong><a href="https://www.nexusmods.com/skyrimspecialedition/mods/4875">BethINI</a></strong> for even more control over FPS). You can also download a <a href="https://www.nexusmods.com/skyrimspecialedition/mods/34705?tab=files&file_id=255386&nmm=1">performance preset</a> for <strong>SSE Display Tweaks</strong> from the mod page if you still encounter performance problems.</p>
         </div>
+
+        <div class="divider"></div>
+
+        <h2 id="installation">Installation</h2>
+
+        <div class="section">
+            <div class="install-box">
+                <h3 style="margin-top: 0; text-align: center;">Download the Collection</h3>
+
+                <p style="text-align: center;">
+                    <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" class="download-button" target="_blank">
+                        📦 Download from Google Drive
+                    </a>
+                </p>
+
+                <div class="warning-box">
+                    <p><strong>⚠ Important:</strong> Make sure you have <strong>7-Zip</strong> installed. Do NOT use WinRAR or Windows built-in extractor!</p>
+                </div>
+            </div>
+
+            <div class="install-box">
+                <h3 style="margin-top: 0; text-align: center;">Installation Steps</h3>
+
+                <div class="install-step">
+                    <p><strong>Step 1:</strong> Download the collection archive from Google Drive.</p>
+                </div>
+
+                <div class="install-step">
+                    <p><strong>Step 2:</strong> Extract the archive using <strong>7-Zip ONLY</strong>. Right-click → 7-Zip → Extract Here.</p>
+                </div>
+
+                <div class="install-step">
+                    <p><strong>Step 3:</strong> Open <strong>Mod Organizer 2</strong> from the extracted folder.</p>
+                </div>
+
+                <div class="install-step">
+                    <p><strong>Step 4:</strong> Configure paths for each program in MO2:</p>
+                    <ul style="margin-top: 10px;">
+                        <li>Click on the program dropdown (top right)</li>
+                        <li>Select <strong>Edit</strong> for each program</li>
+                        <li>Change the default path from:</li>
+                    </ul>
+                    <div class="code-box">
+                        G:\ModCollections\
+                    </div>
+                    <p>To your actual installation path, for example:</p>
+                    <div class="code-box">
+                        C:\Games\SkyrimCollections\
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <p><strong>Step 5:</strong> Make sure you have Skyrim version <strong>1.6.1170</strong> with all Anniversary Edition Creation Club mods pre-downloaded!</p>
+                </div>
+
+                <div class="install-step">
+                    <p><strong>Step 6:</strong> Launch SKSE through MO2 and enjoy!</p>
+                </div>
+            </div>
+        </div>
         
         <div class="divider"></div>
         
-        <h2>Main Features</h2>
+        <h2 id="features">Main Features</h2>
         
         <div class="section">
             <p>In addition to the mechanics listed here, many interesting additions, expansions, changes, and other features have been added to the game. Here are just some basics that can serve as a starting point for character creation.</p>
@@ -899,7 +1264,7 @@
         
         <div class="divider"></div>
 
-        <h2>FAQ</h2>
+        <h2 id="faq">FAQ</h2>
 
         <div class="section">
             <button class="collapsible">• Is the collection NSFW?</button>
@@ -944,7 +1309,7 @@
         
         <div class="divider"></div>
 
-        <h2>Troubleshooting</h2>
+        <h2 id="troubleshooting">Troubleshooting</h2>
 
         <div class="section">
             <button class="collapsible">• I'm having crashes!</button>
@@ -957,7 +1322,7 @@
                     <div style="height: 20px;"></div>
                     <p>If the game crashes at startup before the menu appears and no crash log is generated, try running it again. If it doesn't work next time:</p>
                     <ol>
-                        <li>At the very top of the MO2 interface: <strong>Tools -> Tool Plugins -> Root Builder -> Clear</strong>.</li>
+                        <li>At the very top of the MO2 interface: <strong>Tools → Tool Plugins → Root Builder → Clear</strong>.</li>
                         <li>Locate the <strong>Overwrite</strong> folder in the very end of the mods list. Right-click on it and press <strong>Open in the Explorer</strong>. Locate the <strong>Root</strong> folder and open it. Delete everything except for your screenshots if you have them.</li>
                         <li>Manually clean the game folder from all of the mod folders and ESPs left.</li>
                         <li>Check the files integrity in Steam just in case.</li>
@@ -1003,7 +1368,7 @@
 
                 <p>Restart the SKSE. If it gives you an infinite loading next time:</p>
                 <ol>
-                    <li>At the very top of the MO2 interface: <strong>Tools -> Tool Plugins -> Root Builder -> Clear</strong>.</li>
+                    <li>At the very top of the MO2 interface: <strong>Tools → Tool Plugins → Root Builder → Clear</strong>.</li>
                     <li>Locate the <strong>Overwrite</strong> folder in the very end of the mods list. Right-click on it and press <strong>Open in the Explorer</strong>. Locate the <strong>Root</strong> folder and open it. Delete everything except for your screenshots if you have them.</li>
                     <li>Manually clean the game folder from all of the mod folders and ESPs left.</li>
                     <li>Check the files integrity in Steam just in case.</li>
@@ -1018,7 +1383,7 @@
             <button class="collapsible">• I'm having a black screen, but the interface is visible!<br>• ENB gives me red warnings!</button>            <div class="collapsible-content">
                 <div style="height: 20px;"></div>
                 <ol>
-                    <li>At the very top of the MO2 interface: <strong>Tools -> Tool Plugins -> Root Builder -> Clear</strong>.</li>
+                    <li>At the very top of the MO2 interface: <strong>Tools → Tool Plugins → Root Builder → Clear</strong>.</li>
                     <li>Locate the <strong>Overwrite</strong> folder in the very end of the mods list. Right-click on it and press <strong>Open in the Explorer</strong>. Locate the <strong>Root</strong> folder and open it. Delete everything except for your screenshots if you have them.</li>
                     <li>Manually clean the game root folder from all of the files and folders with "enb" in their name.</li>
                     <li>Launch SKSE through MO2.</li>
@@ -1075,5 +1440,98 @@
             });
         }
     </script>
+
+    <script>
+        let currentSlide = 0;
+        const carousel = document.getElementById('carousel');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        const totalSlides = slides.length;
+        let autoplayInterval;
+        let isPaused = false;
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                if (!isPaused) {
+                    moveCarousel(1);
+                }
+            }, 5000);
+        }
+
+        const carouselContainer = document.querySelector('.carousel-container');
+
+        carouselContainer.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            isPaused = false;
+        });
+
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        slides.forEach(slide => {
+            slide.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('carousel-button')) {
+                    const img = slide.querySelector('img');
+                    openLightbox(img.src);
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        startAutoplay();
+    </script>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="" id="lightbox-img">
+    </div>
 </body>
 </html>
