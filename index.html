@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Things Matter - Skyrim Collection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', serif;
+            background-color: #1a1a1a;
+            color: #d4d4d4;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 60px 0 40px 0;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        h1::before,
+        h1::after {
+            content: "⚔";
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+        
+        h2 {
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        h2::before,
+        h2::after {
+            content: "⚔";
+            font-size: 0.7em;
+            opacity: 0.8;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin: 40px 0 25px 0;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            margin-top: -20px;
+            margin-bottom: 50px;
+            color: #b0b0b0;
+        }
+        
+        .section {
+            margin: 50px 0;
+            padding: 30px 0;
+        }
+        
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #555, transparent);
+            margin: 60px 0;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        ul li {
+            padding-left: 30px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #888;
+        }
+        
+        .faq-item {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #222;
+            border-left: 3px solid #555;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.15em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            color: #d4d4d4;
+            padding-left: 20px;
+        }
+        
+        .note-box {
+            background-color: #252525;
+            border: 1px solid #444;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        a {
+            color: #8ba3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #a8c0e0;
+        }
+        
+        code {
+            background-color: #2a2a2a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e0e0e0;
+        }
+        
+        ol {
+            margin: 20px 0;
+            padding-left: 40px;
+        }
+        
+        ol li {
+            margin-bottom: 10px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border: 2px solid #444;
+        }
+        
+        .collapsible {
+            background-color: #252525;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 20px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2em;
+            margin: 25px 0 0 0;
+            border-left: 4px solid #555;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .collapsible:hover {
+            background-color: #2a2a2a;
+            border-left-color: #777;
+        }
+        
+        .collapsible:after {
+            content: '▼';
+            font-size: 0.8em;
+            margin-left: auto;
+            transition: transform 0.3s;
+        }
+        
+        .collapsible.active:after {
+            transform: rotate(-180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            background-color: #1f1f1f;
+            padding: 0 20px;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        .collapsible-content.active {
+            border-left: 3px solid #555;
+            padding: 35px 20px;
+        }
+        
+        .sub-section {
+            margin: 25px 0;
+        }
+        
+        .sub-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3em;
+            color: #ffffff;
+            margin: 20px 0 15px 0;
+            letter-spacing: 1px;
+        }
+        
+        .key-combo {
+            background-color: #333;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #aaa;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Description</h1>
+        
+        <div class="section">
+            <p>The main focus of the collection is on <strong>small details</strong> and expanded <strong>roleplay options</strong>. It was made for <strong>performance</strong> in mind and stays <strong>vanilla-like</strong> while adding meaningful depth to almost every aspect of the game.</p>
+            
+            <p>Most of the objects that previously cluttered Skyrim are now fun to interact with: <strong>break, rip, throw, recycle, smelt</strong>, and see what happens. Same applies to NPCs and their corpses, since the collection features gore. At the same time, there is now a huge scope for role-playing as both <strong>good</strong> and <strong>bad</strong> guys through the new class system, expanded quests, tons of new dialogue options, reputation system, and alternative solutions that actually matter.</p>
+        </div>
+        
+        <p class="subtitle">Main features are below!<br>And don't forget to check the GIFs.</p>
+        
+        <div class="divider"></div>
+        
+        <h2>Note on Specs</h2>
+        
+        <div class="note-box">
+            <p>The collection will run smoothly on integrated graphics (e.g., AMD Ryzen 5 with an iGPU like the Radeon 680M/780M) and older discrete GPUs, given that you <strong>ignore ENB and Optional Graphic Mods</strong>, and <strong>adjust the graphics settings</strong> to suit your needs.</p>
+            
+            <p>The graphics settings can be configured via Skyrim Launcher (although, it is recommended to use <strong><a href="https://www.nexusmods.com/skyrimspecialedition/mods/4875">BethINI</a></strong> for even more control over FPS). You can also download a <a href="https://www.nexusmods.com/skyrimspecialedition/mods/34705?tab=files&file_id=255386&nmm=1">performance preset</a> for <strong>SSE Display Tweaks</strong> from the mod page if you still encounter performance problems.</p>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <h2>Main Features</h2>
+        
+        <div class="section">
+            <p>In addition to the mechanics listed here, many interesting additions, expansions, changes, and other features have been added to the game. Here are just some basics that can serve as a starting point for character creation.</p>
+            
+            <button class="collapsible">🎮 Gameplay</button>
+            <div class="collapsible-content">
+                <div class="sub-section">
+                    <div class="sub-title">📜 Start</div>
+                    <ul>
+                        <li><p><strong>New Game:</strong> Intro is skipped, you can immediately choose your path.</p>
+                        </li>
+                        <li><p><strong>Levelling System:</strong> The system of attributes and classes from <strong>Morrowind</strong>
+                            and <strong>Oblivion</strong> has been returned. Besides the familiar character upgrade
+                            through perks, the player can now increase their attributes such as strength, intelligence,
+                            agility, speed, and others. Skills improve with use. To level up, click on the flashing
+                            level number in the new tween menu.</p></li>
+                        <li><p><strong>Perks:</strong> New 276 perks have been added, allowing for a wider range of
+                            classes to be built.</p></li>
+                    </ul>
+                </div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">🧝‍♀️ Role-Playing</div>
+                    <ul>
+                        <li><p>The <strong>reputation mechanic</strong>, which creates a morality score for your
+                            character based on the quests you complete, the choices you make, and your actions
+                            throughout your play-through. Your choices will now matter for how people perceive you.</p>
+                        </li>
+                        <li><p>Many <strong>basic interactions and quests have been expanded</strong> to broaden the
+                            range of choices available to characters with different moral compasses and backgrounds
+                            (e.g., <i>lockpicking OR knocking; killing a shellbug for a chitin OR collect it peacefully;
+                                do what Hermaeus Mora commands OR let Storn live</i>).</p></li>
+                        <li><p><strong>Notes scattered throughout Skyrim,</strong> providing an in-character motivation
+                            to explore various locations that you as player might want to visit.</p></li>
+                        <li><p><strong>New player homes:</strong> Secluded temples for the servants of Molag Bal and
+                            Meridia (or a Sload necromancer, depending on your choice), a madman's dream for servants of
+                            Vaermina, Oblivion realms fragments for servants of Peryite, Hermaeus Mora, and Sheogorath.
+                            Learn more in Occult - Daedra.</p></li>
+                    </ul></div>
+            </div>
+            
+            <button class="collapsible">⚔ Combat</button>
+            <div class="collapsible-content">
+                <div class="sub-section">
+                    <div class="sub-title">🏹 General</div>
+
+                    <ul>
+                        <li><p><strong>Movement:</strong> 360 movement behavior. Unlocked attacks movement. Attacks and
+                            spells work mid-air.</p></li>
+                        <li></li>
+                        <li><p><strong>Target Lock:</strong> Target lock with projectile aim support on a key press
+                            <span class="key-combo">mouse middle button</span>.</p></li>
+                        <li></li>
+                        <li><p><strong>Dodge:</strong> Dodge on a sneak key press while moving <span class="key-combo">ctrl</span>
+                            by default.</p></li>
+                        <li></li>
+                        <li><p><strong>Parry:</strong> Light bash is turned into "parry". When you bash while getting
+                            hit, you parry the attack and stagger the attacker. Successful parries do not cost stamina.
+                        </p></li>
+                        <li></li>
+                        <li><p><strong>Timed Blocking:</strong> Raising a shield or weapon blocks 25% more damage and
+                            staggers melee attackers briefly within 1 second.</p></li>
+                        <li></li>
+                        <li><p><strong>Dual Wield Block:</strong> Block on a separate key press <span
+                                class="key-combo">B</span>.</p></li>
+                        <li></li>
+                        <li><p><strong>Grip Change:</strong> Switch weapon wield style on a key press <span
+                                class="key-combo">G</span>.</p></li>
+                        <li></li>
+                        <li><p><strong>Learn To Aim:</strong> Aiming accuracy for Bows, Crossbows, Spells and Staves
+                            depends on the corresponding skill.</p></li>
+                        <li></li>
+                        <li><p><strong>Ricochet:</strong> Realistic arrow and bolt physics with ricochets, fracture and
+                            impact systems.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">⚖️ Balance</div>
+
+                    <ul>
+                        <li><p><strong>New Balance:</strong> Armor Rating Debuff and Proportional Bleed Damage when hit
+                            by an unblocked weapon. Magic Resist Debuff when hit by a spell.</p></li>
+                        <li></li>
+                        <li><p><strong>Stagger Limit:</strong> 5 seconds stagger cooldown to avoid spam. Bosses resist
+                            stagger.</p></li>
+                        <li></li>
+                        <li>
+                            <p><strong>Elemental Reactions</strong> (configurable via MCM):</p>
+                            <ul>
+                                <li><strong>Overload (Fire + Shock):</strong> An explosion with area damage that staggers the targeted individual.</li>
+                                <li><strong>Melt (Fire + Frost):</strong> Single-target damage with reducing elemental and magical resistances.</li>
+                                <li><strong>Superconductivity (Frost + Shock):</strong> Single-target damage with armor rating reducing.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><p><strong>Water Douses Fire:</strong> Jump into the water to douse yourself when set on fire. Slightly harder mudcrab and slaughterfish fights.</p></li>
+                        </li>
+                        <li><p><strong>New Spells:</strong> New spells for each school of magic. Optionally, new blood, necrotic, and poison spells.</p></li>
+                        </li>
+                        <li><p><strong>Spell Absorption Rework:</strong> Spell Absorption now acts as a resistance against spells, not fully negating them. This resist is independent of the vanilla Magic Resist
+                            system and stacks with it. The damage cap is 80%. The amount of restored Magicka is also tied to
+                            the total Spell Absorption.</p></li>
+                        </li>
+                        <li><p><strong>Attacks of Opportunity:</strong> Attacks of opportunity can be inflicted and health status.</p></li>
+                        </li>
+                        <li><p><strong>Stamina:</strong> Drawing a bow, jumping, dodging, and swimming cost stamina.
+                        </p></li>
+                        <li><p><strong>Injuries:</strong> Random trauma debuffs with a corresponding animation.</p>
+                        </li>
+                        </li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">✨ Fun Features</div>
+
+                    <ul>
+                        <li><p><strong>Equipment Degradation</strong> (read more in Crafting).</p></li>
+                        <li></li>
+                        <li><p><strong>Bows Can Break:</strong> Low level bows can be broken with power attacks.</p>
+                        </li>
+                        <li></li>
+                        <li><p><strong>Fire Ignites Arrows:</strong> Holding your nocked arrow or bolt near a fire will
+                            ignite it.</p></li>
+                        <li></li>
+                        <li><p><strong>Alchemy Salts:</strong> Consuming them before using Unrelenting Force creates
+                            corresponding magic school effects. Using them on atronachs can damage or heal them.</p>
+                        </li>
+                        <li></li>
+                        <li><p><strong>Summons:</strong> Heal atronachs with corresponding magic school spells. Heal
+                            undead with poison or hurt them with a restoration spell. Enemies now prioritize attacking
+                            you rather than immediately targeting summons.</p></li>
+                        <li></li>
+                        <li><p><strong>Debauchery:</strong> Break bottles, hold activation button on glass shards, and
+                            stab your enemies with a rose.</p></li>
+                        <li></li>
+                        <li><p><strong>Throwing:</strong> Throwing things causes damage or various useful effects,
+                            depending on the object. For example, torches cause fire damage to NPCs, silver inflicts
+                            additional damage to the undead, centurion dynamo cores explode, and more. Throwing potions
+                            and poisons will heal or hurt.</p></li>
+                    </ul></div>
+            </div>
+            
+            <button class="collapsible">🔨 Crafting</button>
+            <div class="collapsible-content">
+                <div class="sub-section">
+                    <div class="sub-title">🧪 Alchemy</div>
+
+                    <ul>
+                        <li><p><strong>Alchemy System:</strong> Alchemy system improvements with more logical suffixes,
+                            effects round-up to prevent inventory cluttering, lesser cost for impure mixtures, and UI
+                            hints. Portable mortar and pestle.</p></li>
+                        <li></li>
+                        <li><p><strong>Alchemy Training:</strong> In addition to increasing your skill level, you learn
+                            the alchemical properties of random ingredients.</p></li>
+                        <li></li>
+                        <li><p><strong>Alchemists' Services:</strong> Ask alchemists to identify the ingredients'
+                            effects, at a cost.</p></li>
+                        <li></li>
+                        <li><p><strong>Alchemy Requires Bottles:</strong> To create a potion or harvest venom, you need
+                            to have bottles in your inventory. They can be bought, crafted, found in the world, or
+                            acquired either by emptying the potions you don't need at the alchemy table <span
+                                    class="key-combo">shift + activation key</span>, drinking them, or throwing to spill
+                            the potion.</p></li>
+                        <li></li>
+                        <li><p><strong>Alchemy + Cooking:</strong> Food items can be used as ingredients. Cooking and
+                            brewing give alchemy XP. You can create simple potions at the cooking pot and combine them
+                            to create more concentrated versions.</p></li>
+                        <li></li>
+                        <li><p><strong>Alchemy Salts:</strong> Now you can craft them either by combining salt and a
+                            corresponding gem at the smelter or by casting a corresponding spell to turn salt into them.
+                        </p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">🔮 Enchanting & Spellcrafting</div>
+
+                    <ul>
+                        <li><p><strong>Enchanting System:</strong> Enchanted items automatically get the enchantment
+                            name. Enchanting expensive items 20% more stronger. Upon enchanting, soul gems will break
+                            and give you soul gem shards, which can be used to forge a new solid one.</p></li>
+                        <li></li>
+                        <li><p><strong>Recharge Services:</strong> Ask court wizards to recharge enchanted items.</p>
+                        </li>
+                        <li></li>
+                        <li><p><strong>Enchantment Transfer:</strong> Rename or transfer the enchantment from one item
+                            to another compatible item at the arcane enchanter without destroying anything <span
+                                    class="key-combo">shift + activation key</span>.</p></li>
+                        <li></li>
+                        <li><p><strong>Materials:</strong> Most of crafting materials now possess hidden magical
+                            properties, so that they synergize with enchantments to produce a more potent variant. In
+                            order to benefit from them, player must obtain a Mystical Materials perk.</p></li>
+                        <li></li>
+                        <li><p><strong>Scroll Transcribing:</strong> Scrollwriting stations at the court mages rooms.
+                        </p></li>
+                        <li></li>
+                        <li><p><strong>Spell Crafting:</strong> Create custom spells by mixing the effects of existing
+                            ones and setting their stats. Learn to craft with the effects of potions too.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">⚒️ Smithing</div>
+
+                    <ul>
+                        <li><p><strong>Temper Services:</strong> Ask smiths to temper you weapon and armor.</p></li>
+                        <li></li>
+                        <li><p><strong>Recycling:</strong> Empty bottles can be returned to meadery employers and
+                            innkeepers for a few septims or remelted into glass. Most of the clutter can be remelted
+                            into charcoal or ingots at the forge and ore at the smelter. Septims can be remelted into
+                            gold pieces. Meridia beacon can be remelted into silver ingots.</p></li>
+                        <li></li>
+                        <li><p><strong>Dwarven Engineering:</strong> Craft Dwarven Automata with the right knowledge
+                            and Smithing skills. Control them with special Staves found in Dwarven ruins. Power the
+                            Staves with Soul Gems.</span>.</p></li>
+                        <li></li>
+                        <li><p><strong>Equipment Durability:</strong> Weapons and armor degrade upon hitting or being
+                            hit. Degradation rate depends on the attack type and equipment's material. Larger smithing
+                            skill slows down the process. To fix the equipment, ask smiths to temper it or do it
+                            yourself either at the workbench or by using portable hammer and whetstone.</p></li>
+                        <li></li>
+                        <li><p><strong>Skyforge:</strong> When near the Skyforge all weapons and armor can be improved
+                            5% better. When a certain Companion member dies, this buff increases to 10%. However, player
+                            must now ask Eorlund for permission to use the forge, which will be possible after proving
+                            yourself either by becoming a member of the Circle in the Companions or completing the
+                            Missing in Action side quest.</p></li>
+                    </ul></div>
+
+                <div class="sub-section">
+                    <div class="sub-title">🍲 Cooking</div>
+
+                    <ul>
+                        <li><p><strong>New Ways to Cook:</strong> Besides cooking at cooking pots, now you can cook at
+                            campfires, with magic spells and shouts, or by throwing food directly in the fire.</p></li>
+                        <li></li>
+                        <li><p><strong>Brewing:</strong> Interact with mead barrels to create your own alcoholic
+                            beverages.</p></li>
+                        <li></li>
+                        <li><p><strong>Share Your Meal:</strong> Share the meal with followers ("Come on, have this").
+                            Feed dogs and calmed rabbits.</span>.</p></li>
+                    </ul></div>
+            </div>
+            
+            <button class="collapsible">🧭 Adventuring</button>
+            <div class="collapsible-content">
+                <div class="sub-section">
+                    <div class="sub-title">🌲 Survival</div>
+
+                    <ul>
+                        <li><p>Fully configurable CC Survival via MCM.</p></li>
+                        <li></li>
+                        <li><p>Talk to innkeepers to restore your hunger for some gold.</p></li>
+                        <li></li>
+                        <li><p>Warm hands near a heat source for a buff by pressing a key <span
+                                class="key-combo">H</span>.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">🏕️ Camping</div>
+
+                    <ul>
+                        <li><p>CC Camping rework with a new skill tree, buffs, storage, and a portable woodcutting
+                            station, where items can be crafted.</p></li>
+                        <li></li>
+                        <li><p>At the campfire, you can cook or relax <span
+                                class="key-combo">shift + activation key</span>.</p></li>
+                        <li></li>
+                        <li><p>Camping supplies can be purchased.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">🏹 Hunting</div>
+
+                    <ul>
+                        <li><p>Carry undamaged carcasses <span class="key-combo">shift + activation key</span> and sell
+                            them to appropriate NPCs (hunters, butchers, innkeepers, smiths).</p></li>
+                        <li></li>
+                        <li><p>Skin animals realistically. It is also now possible to encounter hunters doing this.</p>
+                        </li>
+                        <li></li>
+                        <li><p>Guards may question poaching unless you’re a Thane or have a Hunter’s Permit.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">🎣 Fishing</div>
+
+                    <ul>
+                        <li><p>Fishermen and passers-by can comment on the process.</p></li>
+                        <li></li>
+                        <li><p>The bait requirement.</p></li>
+                        <li></li>
+                        <li><p>Fish anywhere there is water.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">🐎 Travelling</div>
+
+                    <ul>
+                        <li><p>A parkour mechanic, allowing you to climb on and vault over objects <span
+                                class="key-combo">space</span>.</p></li>
+                        <li></li>
+                        <li><p>Wayshrines, which can be unlocked by completing a small quest. To begin, find intact
+                            wayshrines, light and touch them. One of them will turn out to be imbued with teleportation
+                            magic and start the quest.</p></li>
+                        <li></li>
+                        <li><p>Carriage stops, expanded ferry system, Silt Strider Dusty travels.</p></li>
+                        <li></li>
+                        <li><p>Horses turn better. Horse stamina HUD. New horse management system with reworked wild
+                            horses taming. Claim stray horses when you find a horse rope - this ability will be added to
+                            your magic menu.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">🧼 Bathing</div>
+
+                    <ul>
+                        <li><p>Simple bathing system with soaps, which can be activated in the inventory. You should be
+                            in the water at this moment.</p></li>
+                        <li></li>
+                        <li><p>After washing, you will get an effect that increases your disease resistance and
+                            improves shops prices.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">📿 Collectibles</div>
+
+                    <ul>
+                        <li><p>New gemstones and materials that can be found all over the world.</p></li>
+                        <li></li>
+                        <li><p>Coins of a different nature.</p></li>
+                        <li></li>
+                        <li><p>Shells on the shores.</p></li>
+                        <li></li>
+                        <li><p>Underwater treasures.</p></li>
+                        <li></li>
+                        <li><p>Thalmor members have calians in their inventory.</p></li>
+                    </ul></div>
+            </div>
+
+            <button class="collapsible">🏛️ Society</button>
+            <div class="collapsible-content">
+                <div class="sub-section">
+                    <div class="sub-title">🧑 The Player</div>
+
+                    <ul>
+                        <li><p><strong>Reputation:</strong> A reputation mechanic to make you treated as a hero or
+                            villain you really are.</p></li>
+                        <li></li>
+                        <li><p><strong>Become a Bard:</strong> Play instruments, get better, NPCs react to your skill
+                            dynamically, many new songs, clothing pieces, and the whole new quest.</p></li>
+                        <li></li>
+                        <li><p><strong>Jobs:</strong> Mining ore, chopping firewood, milking cows, and harvesting crops
+                            are now considered meaningful jobs - you must request a permission to work, the disposition
+                            toward the player will not change. Bounties have been reworked - you may now occasionally be
+                            required to bring the head itself as proof. Missives. Additional mini-quests to help NPCs,
+                            which can increase your relationship level with them.</p></li>
+                        <li></li>
+                        <li><p><strong>Gambling:</strong> Lottery tickets and various tavern games in which you can win
+                            money.<span class="key-combo">H</span>.</p></li>
+                    </ul></div>
+
+                <div class="sub-section">
+                    <div class="sub-title">🧑‍🌾 Skyrim People</div>
+
+                    <ul>
+                        <li><p><strong>Lifelike Actors:</strong> Skyrim folk is more lifelike. They have realistic
+                            schedules, routines, environmental interactions, and natural reactions to danger and
+                            weather. They behave more logically and respectfully (not always though), they talk to and
+                            marry each other, taking into account their relationship ranks. They comment you more often.
+                        </p></li>
+                        <li></li>
+                        <li><p><strong>Combat:</strong> NPCs behavior is more smart and lethal in combat. They take
+                            cover, try not to stay in water, search for the enemy until the very end, loot corpses for
+                            equipment, recharge items if there is a soul gem in their inventory, and more.</p></li>
+                        <li></li>
+                        <li><p><strong>Knocking:</strong> Knock on locked doors of houses in Skyrim <span
+                                class="key-combo">shift + activation key</span>. If anyone is home, they will answer the
+                            door. You can then use your speechcraft skills in order to get them to allow you inside. If
+                            someone inside is a friend, they will always permit you to enter.</p></li>
+                    </ul></div>
+
+                <div class="sub-section">
+                    <div class="sub-title">👨‍👩‍👧 Family & Friends</div>
+
+                    <ul>
+                        <li><p><strong>Followers:</strong> Many vanilla followers are expanded with a ton of new
+                            dialogue lines and interaction options. Followers can be sent to search for items, wait in a
+                            specific city, maintain a certain distance, and take more complicated orders than those
+                            presented in the vanilla game.</p></li>
+                        <li></li>
+                        <li><p><strong>Friends, Spouses, and Children:</strong> New voiced conversation scenes, hugs,
+                            gifts, and letters from followers, spouses, and kids. Bid farewell to your family before
+                            adventures - spouses and children grant unique blessings or curses, depending on what they
+                            think of you.</p></li>
+                        <li></li>
+                        <li><p><strong>Pets:</strong> CC Pets upgrade with proper stats, combat abilities, and new
+                            behaviors. Expanded dog companions with new interactions, (e.g., petting, fetching, stray
+                            dogs taming). Improved horses interactions.</p></li>
+                    </ul></div>
+            </div>
+            
+            <button class="collapsible">🌘 Illicit Activities</button>
+            <div class="collapsible-content">
+                <div class="sub-section">
+                    <div class="sub-title">🌙 Sneaking</div>
+
+                    <ul>
+                        <li><p><strong>Hide and Seek:</strong> Disguise system. Hiding in barrels (sneak, press <span
+                                class="key-combo">shift + activation key</span>). Playing Hide and Seek with kids grants
+                            a small amount of XP.</p></li>
+                        <li></li>
+                        <li><p><strong>Light Level:</strong> NPCs detection changes depending on the weather, light
+                            level, and whether the player equipped a torch or cast the candlelight. Player also receives
+                            active buffs and debuffs to the sneak skill. You need to extinguish lanterns, candles,
+                            fires, and torches in order to hide yourself.</p></li>
+                        <li></li>
+                        <li><p><strong>Noise:</strong> Grabbing and item, mining, extinguishing torches, and breaking a
+                            lockpick have a chance to alert enemies nearby. Throw a stone to distract enemies (magic
+                            ability).</p></li>
+                        <li></li>
+                        <li><p><strong>Peeking:</strong> Take a peek through the door (sneak, press <span
+                                class="key-combo">shift + activation key</span>).</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">🗝️ Thievery</div>
+
+                    <ul>
+                        <li><p><strong>Pickpocketing:</strong> Pickpocket any creature. Inventory resets a few days
+                            after. Skill level dependent timer after which you will be kicked out of the inventory.</p>
+                        </li>
+                        <li></li>
+                        <li><p><strong>Lockpicking:</strong> New lockpicking UI with a minigame. Skill level dependent
+                            timer after which you will be kicked out of the menu and nearby NPCs will be alerted. Break
+                            the lock with one-handed and two-handed weapon power attacks. Merchants don't sell lockpicks
+                            anymore, you need to craft them.</p></li>
+                        <li></li>
+                        <li><p><strong>Stolen Goods:</strong> Ask Thieves Guild fences to sanctify stolen goods.
+                            Insignificant stolen items won't be marked as stolen if you weren't caught.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">💰 Dealing</div>
+
+                    <ul>
+                        <li><p><strong>Bad Habits:</strong> Pass out after drinking too much and find yourself in an
+                            unknown place with a hangover. Skooma has 69 different trips and can lead to addiction.</p>
+                        </li>
+                        <li></li>
+                        <li><p><strong>Brewing:</strong> Interact with mead barrels to create your own alcoholic
+                            beverages.</p></li>
+                        <li></li>
+                        <li><p><strong>Skooma Dealing:</strong> Locate a Moon Shack in Rift, plant sugar cane, which
+                            can be bought from Khajiit caravans and skooma dealers, and use a special brewer to create
+                            your own moon sugar. Skooma can be made in a cooking pot. You can sell it to those who buy
+                            it, or hand it over to the guards as "accidentally found contraband" in exchange for a
+                            monetary reward.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">⚖️ Crime</div>
+
+                    <ul>
+                        <li><p>Prepare yourself for occasional city bag checks, checks for contraband during the
+                            arrest, and close observation if guards considered you suspicious for drawing your weapon or
+                            sneaking.</p></li>
+                        <li></li>
+                        <li><p>Taking the throne is a crime. Burning banners is a crime.</p></li>
+                        <li></li>
+                        <li><p>It is now possible to avoid punishment by pointing to your merits for the hold (e.g.,
+                            killing the leader of the bandits).</p></li>
+                        <li></li>
+                        <li><p>Bounties gradually decrease as long as you stay away from the hold.</p></li>
+                    </ul></div>
+            </div>
+            
+            <button class="collapsible">📜 Life & Death</button>
+            <div class="collapsible-content">
+                <div class="sub-section">
+                    <div class="sub-title">💫 Restoration & Priesthood</div>
+
+                    <ul>
+                        <li><p><strong>Religion:</strong> A complete overhaul of Skyrim's religion system with the
+                            ability to pray at the shrines and two new perks, which scale the strength of the relevant
+                            ones: Pilgrim in the Restoration tree, which governs Aedra, and Cultist in the Conjuration
+                            tree, which covers Daedra.</p></li>
+                        <li></li>
+                        <li><p><strong>Rites:</strong> Use Arkay's Burial Rites spell found in House of Arkay to
+                            dispose of corpses, it gives gold and a special blessing. Bury Sinderion's remains to get
+                            Arkay's blessing.</p></li>
+                        <li></li>
+                        <li><p><strong>Priests:</strong> Priests now give blessings and sell thematically appropriate
+                            items such as amulets, potions, spells, and scrolls.</p></li>
+                        <li></li>
+                        <li><p><strong>Help:</strong> Helping wounded guards and healing injured folk is not only
+                            possible now but also raises the relationship rank. Followers always react when you heal
+                            them.</p></li>
+                        <li></li>
+                        <li><p><strong>Sleeping:</strong> Sleeping gives useful benefits and has a chance to cure
+                            diseases. NPCs understand that too and will be less than happy if you wake them up. Dawnstar
+                            people have real nightmares and could wake up screaming.</p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">💀 Decay & Necromancy</div>
+
+                    <ul>
+                        <li><p><strong>Diseases:</strong> Dirty water carries diseases. Diseases have their own
+                            animations and body overlays.</p></li>
+                        <li></li>
+                        <li><p><strong>Death Cycle:</strong> Animals decay over time and turn into bones.</p></li>
+                        <li></li>
+                        <li><p><strong>Corpses:</strong> Corpses can be buried (activate a shovel in the inventory).
+                            Looting corpses is considered a crime, use Subtle Looting ability to pretend to mourn while
+                            searching it. Corpses are also reusable, no more ash piles.</p></li>
+                        <li></li>
+                        <li><p><strong>Undead:</strong> Undead look more disgusting. Healing hurts them, poison heals
+                            them. Throwing silver items at them inflicts more damage.</p></li>
+                        <li></li>
+                        <li><p><strong>Skeletons:</strong> Skeletons will shatter into bones and drop whatever was in
+                            its inventory upon death or hitting their corpse. Shouting obliterates them.</p></li>
+                        <li></li>
+                        <li><p><strong>Grave Robbery:</strong> Loot graves and ossuaries, use some of the newly added
+                            items in necromantic practices. Dig up dragon bones and scales from their burial mounds.</p>
+                        </li>
+                    </ul></div>
+            </div>
+            
+            <button class="collapsible">🕸 Occult</button>
+            <div class="collapsible-content">
+                <div class="sub-section">
+                    <div class="sub-title">🩸 Vampires & Werewolves</div>
+
+                    <ul>
+                        <li><p><strong>Dawnguard:</strong> A new way to start the Dimhollow Crypt quest without
+                            visiting Fort Dawnguard - look for clues after the Hall of the Vigilant is destroyed.
+                            Dawnguard questline as a vampire. Sell vampire dust to Dawnguard members.</p></li>
+                        <li></li>
+                        <li><p><strong>Companions:</strong> Non-werewolf option for becoming a Companion, you must do
+                            another task to prove yourself. Companions can be asked to aid during the Dragon Rising
+                            quest. Other tweaks and fixes for the Companions questline.</p></li>
+                        <li></li>
+                        <li><p><strong>New Quests:</strong> Become vampire unwillingly. Investigate Sybille Stentor
+                            deeds. Tweaked Serana's cure quest. An alternate Silver Hand questline.</p></li>
+                        <li></li>
+                        <li><p><strong>Vampire Feeding:</strong> Vampire feeding with Namira Ring (now sneak mode
+                            only). Feed on almost defeated, unaware, and fallen enemies (sneak, <span class="key-combo">shift + activation key</span>).
+                        </p></li>
+                        <li></li>
+                        <li><p><strong>Vampire Abilities:</strong> Vampires can waterbreathe and cast no shadow.
+                            Vampire lords can fly (tap space) and keep utility. Sun affects vampires unless they wear
+                            hoods. Wielding anti-undead and silver equipment causes damage.</p></li>
+                        <li></li>
+                        <li><p><strong>Werewolf Abilities:</strong> Werewolf form keeps utility, has fully animated
+                            reverse transformation, and a transformation timer widget. Werewolf howl works causes no
+                            friendly fire and reveals corpses for a minute. Wielding silver in human form causes damage.
+                        </p></li>
+                    </ul></div>
+                
+                <div class="sub-section">
+                    <div class="sub-title">🌑 Daedra</div>
+
+                    <ul>
+                        <li><p><strong>Daedric Artefacts:</strong> Destroy them at the Aetherium forge. Hear deities'
+                            voices while wielding their artefacts. Now, to recharge daedric weapon artefacts, black soul
+                            gems or Daedra Hearts are required instead of all types of soul gems. The Mace of Molag Bal
+                            and Mehrunes' Razor accept human hearts, while Wabbajack accepts cheese.</p></li>
+                        <li></li>
+                        <li><p><strong>Azura:</strong> Find a relaxing garden upstream from Falkreath Lumbermill.</p>
+                        </li>
+                        <li></li>
+                        <li><p><strong>Mephala:</strong> Expanded The Whispering Door quest with new roleplay options.
+                        </p></li>
+                        <li></li>
+                        <li><p><strong>Boethia:</strong> An alternate way to complete Boethia's Calling plus a new
+                            quest.</p></li>
+                        <li></li>
+                        <li><p><strong>Meridia:</strong> Travel to Resting Grounds in Rift to restore one of her lost
+                            beacons and earn custodianship of the Chantry of the Dawn. Or corrupt the beacon, gaining
+                            access to the lair of a long dead Sload necromancer.</p></li>
+                        <li></li>
+                        <li><p><strong>Mehrunes:</strong> Alternate ways to enter the shrine without helping Silus or
+                            siding with Mehrunes. A skilled smith can reforge the Razor and complete the quest.</p></li>
+                        <li></li>
+                        <li><p><strong>Sheogorath:</strong> Return to the Shivering Isles, obtain the Staff of
+                            Sheogorath, find the Sheogorath's Garden, a player's home in Merryfair Farm's basement,
+                            which rooms unlock gradually upon completing the main quests.</p></li>
+                        <li></li>
+                        <li><p><strong>Sanguine:</strong> Help Sanguine celebrate his birthday as you try to entertain
+                            him in a series of odd, dangerous and possibly pointless adventures through his Realms of
+                            Revelry!</p></li>
+                        <li></li>
+                        <li><p><strong>Hermaeus:</strong> Another way to learn the final word of the Bend Will shout,
+                            without sacrificing Storn. Black Book quests tweaks. New quest - make way to the Derelict
+                            Shanty to begin your journey and gain a home after.</p></li>
+                        <li></li>
+                        <li><p><strong>Vaermina:</strong> New quest - travel to Cragwallow Slope and obtain the Idol of
+                            Vaermina to begin. Find the Underkeep in the Ratway to enter a madman's surreal nightmare
+                            and gain a home after.</p></li>
+                        <li></li>
+                        <li><p><strong>Molag Bal:</strong> Expanded The House of Horrors quest with new roleplay
+                            options. After the quest, you will hear a whisper with a location name. Find it and become
+                            the new guardian of the temple of Molag Bal after a small quest.</p></li>
+                        <li></li>
+                        <li><p><strong>Namira:</strong> Expanded The Taste of Death quest with new roleplay options.
+                        </p></li>
+                        <li></li>
+                        <li><p><strong>Peryite:</strong> Expanded The Only Cure quest with new roleplay options. New
+                            quest - travel to Fishbelly Grotto just outside Morthal and begin your journey to gain a
+                            home after.</p></li>
+                    </ul></div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+
+        <h2>FAQ</h2>
+
+        <div class="section">
+            <button class="collapsible">• Is the collection NSFW?</button>
+            <div class="collapsible-content">
+                <div style="height: 20px;"></div>
+                <p>Yes, it features gore and mild swearing, but there is no other adult stuff.</p>
+            </div>
+
+            <button class="collapsible">• Does it support ultrawide displays?</button>
+            <div class="collapsible-content">
+                <div style="height: 20px;"></div>
+                <p>Yes, locate the <strong>DISPLAY RATIO</strong> separator. There you can find 21:9 and 16:10 patches.</p>
+            </div>
+
+            <button class="collapsible">• Is it compatible with Skyrim Together Reborn?</button>
+            <div class="collapsible-content">
+                <div style="height: 20px;"></div>
+                <p>Disable <a href="https://www.nexusmods.com/skyrimspecialedition/mods/17230">SSE Engine Fixes</a> and <a href="https://www.nexusmods.com/skyrimspecialedition/mods/41252">Smoothcam</a> and you should be able to play.</p>
+            </div>
+
+            <button class="collapsible">• Is vanilla atmosphere completely untouched?</button>
+            <div class="collapsible-content">
+                <div style="height: 20px;"></div>
+                <p>I tried to preserve the vanilla atmosphere as much as possible without adding anything new. But since it's my collection, I have the right to mess around a bit.</p>
+
+                <p><strong>Environmental</strong><br>
+                    Added some minor waves improvements, because the old ones annoyed me. The same story with the weather. By default, the collection offers <a href="https://www.nexusmods.com/skyrimspecialedition/mods/2187">Vivid Weathers</a>. However, feel free to choose your own weather mod (provided you start a new game).</p>
+
+                <p><strong>Landscape</strong><br>
+                    For the performance sake, removed small rocks, pebbles, shrubs, thickets, driftwood, vines, and 2D roots from cliffs. Some particle and smoke effects.</p>
+
+                <p>Mods for landscape diversity in the collection mostly don't go beyond the vanilla game - they don't add new objects, but replace old ones with the Base Object Swapper to add variety to the environment. As for Morthal, in addition to BOS miracles, some atmosphere-appropriate decorations and an ever-present fog were added.</p>
+
+                <p>Light overhauls of cities, towns, orc strongholds, and faction halls by <a href="https://next.nexusmods.com/profile/RubberSpaghetti">RubberSpaghetti</a>.</p>
+
+                <p>Improved furniture for orcs and thalmor members, more appropriate to their culture. Since the collection allows you to break flimsy furniture, and this one is pretty well-made, it cannot be broken (I'm no 3D artist to make a patch). Other minor logical improvements powered by BOS.</p>
+
+                <p><strong>Characters</strong><br>
+                    New vanilla-like skin textures for characters. New natural hair colors. More vanilla-like hair. The restriction on race and gender for humanoid races has been removed, but some hairstyles or head shape will have to be edited manually using sliders or in Sculpt.</p>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+
+        <h2>Troubleshooting</h2>
+
+        <div class="section">
+            <button class="collapsible">• I'm having crashes!</button>
+            <div class="collapsible-content">
+                <div style="height: 20px;"></div>
+                <p>First of all, make sure you use 1.6.1170 version and you have all the AE CC mods pre-downloaded!</p>
+
+                <button class="collapsible">• CTD on Game Start</button>
+                <div class="collapsible-content">
+                    <div style="height: 20px;"></div>
+                    <p>If the game crashes at startup before the menu appears and no crash log is generated, try running it again. If it doesn't work next time:</p>
+                    <ol>
+                        <li>At the very top of the MO2 interface: <strong>Tools -> Tool Plugins -> Root Builder -> Clear</strong>.</li>
+                        <li>Locate the <strong>Overwrite</strong> folder in the very end of the mods list. Right-click on it and press <strong>Open in the Explorer</strong>. Locate the <strong>Root</strong> folder and open it. Delete everything except for your screenshots if you have them.</li>
+                        <li>Manually clean the game folder from all of the mod folders and ESPs left.</li>
+                        <li>Check the files integrity in Steam just in case.</li>
+                        <li>Run the game.</li>
+                        <li>Make sure you still have all the CC creations installed.</li>
+                        <li>Exit the game.</li>
+                        <li>Launch SKSE through MO2.</li>
+                    </ol>
+                    <p>If that doesn't work either, something went wrong during the collection downloading or extracting. Consider reinstalling it.</p>
+                </div>
+
+                <button class="collapsible">• CTD After Sleeping</button>
+                <div class="collapsible-content">
+                    <div style="height: 20px;"></div>
+                    <p>Make sure the "Save on Rest" is turned off in the game settings.</p>
+                </div>
+
+                <button class="collapsible">• CTD Related to Target Lock OR Using Projectiles in Third Person</button>
+                <div class="collapsible-content">
+                    <div style="height: 20px;"></div>
+                    <p>Disable the <strong>True Directional Movement</strong>. It can be partially replaced by <a href="https://www.nexusmods.com/skyrimspecialedition/mods/33139">360 Movement Behavior SE</a>. Target Lock feature will be missing though.</p>
+                </div>
+
+                <button class="collapsible">• CTD Related to RaceMenu Hair Sculpting</button>
+                <div class="collapsible-content">
+                    <div style="height: 20px;"></div>
+                    <p>Sculpting changes the vertices, and the RaceMenu DLL accesses invalid memory. There is nothing that can be done about this crash. Consider editing the head mesh instead.</p>
+                </div>
+
+                <button class="collapsible">• Other CTDs</button>
+                <div class="collapsible-content">
+                    <div style="height: 20px;"></div>
+                    <p>Please report this in the collection bugs, attaching the crash log.</p>
+                </div>
+            </div>
+
+            <button class="collapsible">• I'm having an infinite menu loading!</button>
+            <div class="collapsible-content">
+                <div style="height: 20px;"></div>
+                <p>1. Make sure that it is not a long loading and the memory metric in the task manager is frozen. Terminate the task in the task manager. Check again to see if there is an additional process with SkyrimSE.exe. If there is, terminate it as well.</p>
+
+                <p>2. Make sure that you didn't add any new mods that aren't the part of the collection and could possibly introduce bugs (e.g., the mod itself is buggy; the mod is incompatible with something already present the collection; you have incorrectly handled conflicts between some mods or their load order). Remove them if there are any and proceed to the next step.</p>
+
+                <p>Restart the SKSE. If it gives you an infinite loading next time:</p>
+                <ol>
+                    <li>At the very top of the MO2 interface: <strong>Tools -> Tool Plugins -> Root Builder -> Clear</strong>.</li>
+                    <li>Locate the <strong>Overwrite</strong> folder in the very end of the mods list. Right-click on it and press <strong>Open in the Explorer</strong>. Locate the <strong>Root</strong> folder and open it. Delete everything except for your screenshots if you have them.</li>
+                    <li>Manually clean the game folder from all of the mod folders and ESPs left.</li>
+                    <li>Check the files integrity in Steam just in case.</li>
+                    <li>Run the game.</li>
+                    <li>Make sure you still have all the CC creations installed.</li>
+                    <li>Exit the game.</li>
+                    <li>Launch SKSE through MO2.</li>
+                </ol>
+                <p>If that doesn't work either, then something went wrong during the collection downloading or extracting. Consider reinstalling it.</p>
+            </div>
+
+            <button class="collapsible">• I'm having a black screen, but the interface is visible!<br>• ENB gives me red warnings!</button>            <div class="collapsible-content">
+                <div style="height: 20px;"></div>
+                <ol>
+                    <li>At the very top of the MO2 interface: <strong>Tools -> Tool Plugins -> Root Builder -> Clear</strong>.</li>
+                    <li>Locate the <strong>Overwrite</strong> folder in the very end of the mods list. Right-click on it and press <strong>Open in the Explorer</strong>. Locate the <strong>Root</strong> folder and open it. Delete everything except for your screenshots if you have them.</li>
+                    <li>Manually clean the game root folder from all of the files and folders with "enb" in their name.</li>
+                    <li>Launch SKSE through MO2.</li>
+                </ol>
+            </div>
+
+            <button class="collapsible">• Something else is going on!</button>
+            <div class="collapsible-content">
+                <div style="height: 20px;"></div>
+                <p>Please report this in the bugs section, describing the problem in detail, attaching screenshots if necessary, crash logs if the game crashes, and anything else you deem necessary.</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        
+        <div style="text-align: center; margin-top: 80px; padding: 40px 0; color: #888; font-size: 0.9em;">
+            <p>Small Things Matter - Skyrim Special Edition Collection</p>
+            <p style="margin-top: 10px;">By Zhitsak</p>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function(e) {
+                e.stopPropagation();
+
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+
+                if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                    content.style.maxHeight = "0px";
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+
+                    setTimeout(() => {
+                        if (content.style.maxHeight !== "0px") {
+                            content.style.maxHeight = "9999px";
+                        }
+                    }, 700);
+                }
+
+                setTimeout(() => {
+                    var parent = this.parentElement;
+                    while (parent) {
+                        if (parent.classList && parent.classList.contains("collapsible-content")) {
+                            if (parent.style.maxHeight && parent.style.maxHeight !== "0px") {
+                                parent.style.maxHeight = parent.scrollHeight + 500 + "px";
+                            }
+                        }
+                        parent = parent.parentElement;
+                    }
+                }, 100);
+            });
+        }
+    </script>
+</body>
+</html>
