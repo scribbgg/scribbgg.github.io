@@ -272,11 +272,11 @@
         }
 
         .nav-container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 15px;
             flex-wrap: wrap;
             padding: 0 20px;
         }
@@ -285,12 +285,13 @@
             font-family: 'Cinzel', serif;
             color: #d4d4d4;
             text-decoration: none;
-            font-size: 1.1em;
-            letter-spacing: 2px;
+            font-size: 1em;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             transition: color 0.3s, transform 0.3s;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-bottom: 2px solid transparent;
+            white-space: nowrap;
         }
 
         .nav-link:hover {
@@ -439,12 +440,12 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.86));
             color: #ffffff;
-            padding: 20px;
             font-family: 'Cinzel', serif;
             text-align: center;
             letter-spacing: 2px;
+            padding-bottom: 35px;
         }
 
         .carousel-button {
@@ -475,7 +476,7 @@
 
         .carousel-indicators {
             position: absolute;
-            bottom: 20px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -484,17 +485,17 @@
         }
 
         .carousel-indicator {
-            width: 12px;
-            height: 12px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background-color: rgba(255,255,255,0.5);
+            background-color: rgba(255, 255, 255, 0.3);
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
         .carousel-indicator.active {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.73);
         }
 
         .carousel-indicator:hover {
@@ -506,14 +507,16 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="#home" class="nav-link">Home</a>
+            <a href="#info" class="nav-link">Info</a>
             <a href="#installation" class="nav-link">Installation</a>
             <a href="#features" class="nav-link">Features</a>
             <a href="#faq" class="nav-link">FAQ</a>
             <a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+            <a href="forum.html" class="nav-link">Forum</a>
         </div>
     </nav>
 
-    <div class="carousel-container">
+    <div id="home" class="carousel-container">
         <div class="carousel" id="carousel">
             <div class="carousel-slide">
                 <img src="images/screenshot1.png" alt="Screenshot 1">
@@ -565,7 +568,7 @@
     </div>
 
     <div class="container">
-        <h1 id="home">Description</h1>
+        <h1 id="info">Description</h1>
         
         <div class="section">
             <p>The main focus of the collection is on <strong>small details</strong> and expanded <strong>roleplay options</strong>. It was made for <strong>performance</strong> in mind and stays <strong>vanilla-like</strong> while adding meaningful depth to almost every aspect of the game.</p>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum - Small Things Matter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+        
+        body {
+            font-family: 'Crimson Text', serif;
+            background-color: #1a1a1a;
+            color: #d4d4d4;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 25px 0 40px 0;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        h1::before,
+        h1::after {
+            content: "⚔";
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+        
+        h2 {
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        h2::before,
+        h2::after {
+            content: "⚔";
+            font-size: 0.7em;
+            opacity: 0.8;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin: 40px 0 25px 0;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            margin-top: -20px;
+            margin-bottom: 50px;
+            color: #b0b0b0;
+        }
+        
+        .nav {
+            position: sticky;
+            top: 0;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #555;
+            padding: 20px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            color: #d4d4d4;
+            text-decoration: none;
+            font-size: 1em;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s, transform 0.3s;
+            padding: 10px 15px;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            border-bottom-color: #777;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: #ffffff;
+            border-bottom-color: #555;
+        }
+        
+        .section {
+            margin: 50px 0;
+            padding: 30px 0;
+        }
+        
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #555, transparent);
+            margin: 60px 0;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        ul li {
+            padding-left: 30px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #888;
+        }
+
+        .note-box {
+            background-color: #252525;
+            border: 1px solid #444;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .faq-item {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #222;
+            border-left: 3px solid #555;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.15em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            color: #d4d4d4;
+            padding-left: 20px;
+        }
+
+        a {
+            color: #8ba3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #a8c0e0;
+        }
+
+        .giscus, .giscus-frame {
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+                gap: 20px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .nav-container {
+                gap: 10px;
+            }
+
+            .nav-link {
+                font-size: 0.9em;
+                padding: 8px 12px;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#info" class="nav-link">Info</a>
+            <a href="index.html#installation" class="nav-link">Installation</a>
+            <a href="index.html#features" class="nav-link">Features</a>
+            <a href="index.html#faq" class="nav-link">FAQ</a>
+            <a href="index.html#troubleshooting" class="nav-link">Troubleshooting</a>
+            <a href="forum.html" class="nav-link active">Forum</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Discussion Forum</h1>
+        <p class="subtitle">Share your experiences, report bugs, and discuss the collection</p>
+
+        <div class="note-box">
+            <p><strong>Welcome to the Small Things Matter discussion forum!</strong></p>
+            <p>This is a place to share your thoughts, report issues, request features, and help fellow users. Feel free to start a new discussion or join an existing one.</p>
+            
+            <div style="margin-top: 25px;">
+                <p><strong>When reporting bugs, please include:</strong></p>
+                <ul>
+                    <li><strong>Detailed description</strong> - What happened? What did you expect?</li>
+                    <li><strong>Steps to reproduce</strong> - How can we recreate the issue?</li>
+                    <li><strong>System specs</strong> - Your hardware, game version, modifications</li>
+                    <li><strong>Crash logs</strong> - Attach logs if the game crashed</li>
+                    <li><strong>Screenshots/videos</strong> - Visual evidence is very helpful!</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>Note:</strong> You'll need a GitHub account to participate. It's free and takes just a couple of minutes to create.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Discussions</h2>
+
+        <script src="https://giscus.app/client.js"
+                data-repo="scribbgg/scribbgg.github.io"
+                data-repo-id="R_kgDOQK8nlg"
+                data-category="General"
+                data-category-id="DIC_kwDOQK8nls4CxMZ4"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="noborder_dark"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
+
+        <div class="divider"></div>
+        
+        <div style="text-align: center; margin-top: 80px; padding: 40px 0; color: #888; font-size: 0.9em;">
+            <p>Small Things Matter - Skyrim Special Edition Collection</p>
+            <p style="margin-top: 10px;">By Scribbgg</p>
+        </div>
+    </div>
+</body>
+</html>
